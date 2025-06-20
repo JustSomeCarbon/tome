@@ -27,6 +27,7 @@ tandom with the Blink tool.
 Flags::
 ```
 -h : prints help information for gate
+-l : lists all gates and their corresponding tags
 -c : creates a new gate point in the specified directory
 -d : takes a gate tag and deletes it from the gate list
 -x : delete all gate tags from the gate list
