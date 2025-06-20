@@ -175,6 +175,7 @@ void print_dir_tree(char* filename, DIR* dir, int branch) {
       {
         if (branch > 1) {
           DIR* nested_dir = opendir(name);
+          printf("%*s%s::\n", depth * 2, " ", entry->d_name);
           depth++;
           print_dir_tree(name, nested_dir, branch-1);
           depth--;

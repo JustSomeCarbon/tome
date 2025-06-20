@@ -3,6 +3,16 @@
 Tome is a collection of CLI tools built for fun. Each tool is named after some type
 of spell that represents its behavior.
 
+### Building the Project
+
+Run the following to build the project:
+```
+$ ./make.sh
+```
+This will run the make file and build the executables of the tools. There is not yet
+functionality to fully install the executables on the host system and will be built
+in later.
+
 ### Scry
 
 Scry is a vision tool used to list information about a specific file or directory. It
