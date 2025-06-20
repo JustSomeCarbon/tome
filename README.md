@@ -24,6 +24,14 @@ Gate is a movement tool used to create gate points in specified directories. Gat
 are stored in a gate file and are specified with a three letter tag. Gate works in
 tandom with the Blink tool.
 
+Flags::
+```
+-h : prints help information for gate
+-c : creates a new gate point in the specified directory
+-d : takes a gate tag and deletes it from the gate list
+-x : delete all gate tags from the gate list
+```
+
 ### Blink
 
 Blink is a movement tool used in tandem with Gate. Blink accepts a tag and moves the current
