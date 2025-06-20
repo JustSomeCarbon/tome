@@ -95,6 +95,7 @@ void help() {
   printf("Describes information for files and directories.\n");
   printf("\tVisualize file tree information in an easy manner.\n");
   printf(" Flags::\n");
+  printf("\t-h : prints help information for scry\n");
   printf("\t-s : prints file information in short format\n");
   printf("\t-t : visualizes a directory in a tree format. Default depth is 2\n");
 
