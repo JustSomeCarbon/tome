@@ -83,7 +83,9 @@ int main(int argc, char* argv[]) {
 }
 
 void usage() {
-  printf("Scry::\n\tInformational system");
+  printf("Scry::\n");
+  printf(" File information system\n");
+  printf(" View information on a given file or set of files within a directory\n");
   printf(" usage: $ scry -[flags] [filepath]\n\n");
 }
 
