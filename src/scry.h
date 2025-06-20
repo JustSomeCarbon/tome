@@ -1,9 +1,11 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <dirent.h>
 
 // FLAGS
-short short_fl = 0;
+extern short short_fl;
+extern short tree_fl;
 
 /**
  * Print basic usage message to console
@@ -24,6 +26,12 @@ void handle_file(char* filename, struct stat stats);
  * handles scry functionality for a directory
  */
 void handle_dir(char* filename);
+
+/**
+ * prints the entries of a directory as a tree up to
+ * given branch levels.
+ */
+void print_dir_tree(char* filename, DIR* dir, int branch);
 
 /**
  * print file information to console
