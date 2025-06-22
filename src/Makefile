@@ -10,4 +10,4 @@ gate: gate.c gate.h
 	$(CC) $(CFLAGS) -o gate gate.c
 
 clean:
-	rm scry gate
+	rm scry gate .gatefile

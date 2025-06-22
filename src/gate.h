@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 
 /**
  * prints usage information for the program
@@ -34,6 +34,13 @@ char* generate_tag();
 int check_tag_collision(char* tag);
 
 /**
- * create a new gate
+ * create a new gate. The new gate is added to the gatefile
  */
 int create_gate(char* path);
+
+/**
+ * takes a tag and deletes the corresponding gate entry
+ * within the gate file. If no gate coresponding with the
+ * given tag is found, nothing is changed.
+ */
+int delete_gate(char* tag);
