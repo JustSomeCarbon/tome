@@ -95,7 +95,7 @@ int main(int argc, char* argv[]) {
 
 void usage() {
   printf("GATE::\n");
-  printf(" Filesystem movement system\n");
+  printf(" Filesystem movement tool\n");
   printf(" Create gates within file systems that allow you to maneuver between different gate points quickly\n");
   printf("\t$ gate -[flags] [filepath]\n\n");
 }
