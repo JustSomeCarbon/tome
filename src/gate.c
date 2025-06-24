@@ -63,9 +63,22 @@ int main(int argc, char* argv[]) {
             break;
           case 'd':
             break_flag = 1;
+            if ((param+1) >= argc) {
+              printf("Error: no delete tag provided\n");
+              printf("\tusage: $ gate -d abc\n\n");
+              return 0;
+            } else if (argv[param+1][0] == '-') {
+              printf("Error: no delete tag provided\n");
+              printf("\tusage: $ gate -d abc\n\n");
+            } else {
+              if (!delete_gate(argv[param+1])) {
+                printf("\tUnable to delete tag: %s\n", argv[param+1]);
+              }
+            }
             break;
           case 'x':
             break_flag = 1;
+            delete_all_gates();
             break;
           default:
             printf("Error: unknown flag %c\n", cur);
@@ -112,7 +125,7 @@ void list_gates() {
 	size_t line_len = 0;
 
 	while (getline(&line, &line_len, file) != -1) {
-		printf("%s\n", line);
+		printf("%s", line);
 		printf("----\n");
 	}
 	
@@ -197,12 +210,12 @@ int delete_gate(char *tag) {
 	if (!old_file) {
 		printf("Error: Unable to open gatefile\n");
 		printf("\tEnsure gate file exists\n\n");
-		return 1;
+		return 0;
 	}
 	FILE* new_file = fopen(".new_gates", "w");
 	if (!new_file) {
 		printf("Error: unable to create new gate file\n");
-		return 1;
+		return 0;
 	}
 
 	char* line;
@@ -232,5 +245,16 @@ int delete_gate(char *tag) {
 	// overwrite the gate file
 	rename(".new_gates", gate_file);
 
-	return 0;
+	return 1;
+}
+
+int delete_all_gates() {
+  remove(gate_file);
+  FILE* file = fopen(gate_file, "w");
+  if (!file) {
+    printf("Error: unable to initialize gate file after wipe\n");
+    return 0;
+  }
+  fclose(file);
+  return 1;
 }

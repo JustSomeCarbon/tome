@@ -44,3 +44,9 @@ int create_gate(char* path);
  * given tag is found, nothing is changed.
  */
 int delete_gate(char* tag);
+
+/**
+ * Wipes the gate file of any existing gates. The resulting gate
+ * file is empty.
+ */
+int delete_all_gates();
